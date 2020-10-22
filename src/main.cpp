@@ -1,10 +1,5 @@
-#include <iostream>
-#include <chrono>
 #include "AsioConfig.h"
-#include "NetCommon.h"
-#include <asio.hpp>
-#include <asio/ts/buffer.hpp>
-#include <asio/ts/internet.hpp>
+#include "NetMessage.h"
 
 
 // From Damian Jarek
@@ -17,8 +12,6 @@
 // - The last parameter to `async_` functions accepts a so-called CompletionToken. It's a fancy way of customizing ASIO-compatible async algorithms to tell it how the algorithm should start(eagerly or lazily) or how it should deliver its results (call a callback, set the result of a future, resume a coroutine or resume a fiber). While understanding this mechanism is definitely out of scope of this tutorial, it's worth at least knowing of the existence of this thing.
 // - ASIO programs are simplest to write when your contexts are single-threaded. Remember, if you're doing asynchronous networking, you get quite far on just one thread!
 
-#define NL "\n"
-#define CR "\r\n"
 std::vector<char> vBuffer(10 * 1024);
 
 void FetchSome(asio::ip::tcp::socket& socket)
@@ -40,8 +33,8 @@ void FetchSome(asio::ip::tcp::socket& socket)
 
 int main(int argc, char **argv)
 {
-    netcom::Message msg;
-    std::cout << msg.header.Id << NL;
+    net::Message<int> msg;
+    std::cout << msg.header.id << NL;
     asio::error_code ec;
 
     asio::io_context ctx;

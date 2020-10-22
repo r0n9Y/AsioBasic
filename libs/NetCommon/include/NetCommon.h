@@ -1,16 +1,19 @@
 #pragma once
+
+#include <memory>
+#include <thread>
+#include <mutex>
+#include <deque>
+#include <optional>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <chrono>
 #include <cstdint>
 
-namespace netcom 
-{
-class Message
-{
-    struct Header{
-        uint32_t Id;
-        uint32_t Size;
-    };
-    public:
-    Header header;
-};
+#include <asio.hpp>
+#include <asio/ts/buffer.hpp>
+#include <asio/ts/internet.hpp>
 
-} // namespace netcom
+#define NL "\n"
+#define CR "\r\n"
