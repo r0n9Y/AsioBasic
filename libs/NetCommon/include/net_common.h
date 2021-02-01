@@ -16,5 +16,8 @@
 #include <asio/ts/buffer.hpp>
 #include <asio/ts/internet.hpp>
 
+// log
+#include "spdlog/spdlog.h"
+
 #define NL "\n"
 #define CR "\r\n"

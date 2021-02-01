@@ -7,8 +7,9 @@ install(FILES
     include/net_tsqueue.h
     include/net_client.h
     include/net_server.h
+    include/net_utils.h
     DESTINATION include)
-
+#
 # INTERFACE means things that consumers require but the producer doesn’t.
 target_include_directories(NetCommon INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/include

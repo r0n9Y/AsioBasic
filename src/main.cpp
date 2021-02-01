@@ -29,5 +29,7 @@ int main()
     int a = 1;
     bool b = false;
     double c = 1.638;
+
+    spdlog::info("test{}", " something normal.");
     return 0;
 }
