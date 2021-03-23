@@ -60,12 +60,13 @@ namespace net
     struct owned_message
     {
         std::shared_ptr<connection<T>> remote = nullptr;
+        message<T> content;
 
         friend std::ostream& operator << (std::ostream& os, const owned_message<T>& msg)
         {
-            os << msg.m_content;
+            os << msg.content;
             return os;
         }
-        message<T> m_content;
+        
     };
 } // namespace net

@@ -21,7 +21,7 @@ configure_file(${INC_dir}/AsioConfig.h.in ${INC_dir}/AsioConfig.h)
 include(CTest)
 enable_testing()
 
-add_executable(App src/main.cpp)
+add_executable(App src/shutendouji_server.hpp src/main.cpp)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 # set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

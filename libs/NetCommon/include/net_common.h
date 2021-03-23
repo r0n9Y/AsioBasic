@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdint.h>
+#include <stdint.h> // for uint32_t etc.
 #include <memory>
 #include <thread>
 #include <mutex>
